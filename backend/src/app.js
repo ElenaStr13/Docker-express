@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+
 const User = require('./dataBase/userModel');
 
-dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -41,7 +41,6 @@ const connection = async () => {
         }
     }
 };
-
 const start = async () => {
     try {
         await connection();
@@ -52,5 +51,4 @@ const start = async () => {
         console.error('Failed to start server:', e);
     }
 };
-
 start();
